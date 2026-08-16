@@ -533,7 +533,7 @@ const mapConfig = {
       if (end) addStop(end);
     }
 
-    // --- controls ----------------------------------------
+       // --- controls ----------------------------------------
     function fitRoute() {
       if (!allPoints.length) return;
       map.fitBounds(L.latLngBounds(allPoints), {
@@ -545,4 +545,51 @@ const mapConfig = {
 
     on($("#btnViewRoute"), "click", fitRoute);
     on($("#btnCenterMap"), "click", function () {
-      map.setView(mapConfig.defaultCenter, mapConfig.defa
+      map.setView(mapConfig.defaultCenter, mapConfig.defaultZoom, {
+        animate: !prefersReducedMotion
+      });
+    });
+
+    // --- tap-to-activate shield (mobile scroll safety) ---
+    const shield = $("#mapShield");
+    const lockBtn = $("#btnLockMap");
+
+    function unlock() {
+      map.dragging.enable();
+      map.touchZoom.enable();
+      map.doubleClickZoom.enable();
+      map.scrollWheelZoom.enable();
+      shield.classList.add("is-hidden");
+      if (lockBtn) lockBtn.hidden = false;
+    }
+    function lock() {
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
+      shield.classList.remove("is-hidden");
+      if (lockBtn) lockBtn.hidden = true;
+    }
+    on(shield, "click", unlock);
+    on(lockBtn, "click", lock);
+
+    // Leaflet needs a nudge once the section is actually laid out on screen
+    function settle() {
+      map.invalidateSize();
+      window.requestAnimationFrame(fitRoute);
+    }
+    if ("IntersectionObserver" in window) {
+      const mio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          settle();
+          mio.disconnect();
+        });
+      }, { threshold: 0.15 });
+      mio.observe(host);
+    }
+    window.setTimeout(settle, 400);
+    on(window, "resize", function () { map.invalidateSize(); });
+  })();
+
+})();
