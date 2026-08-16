@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F2EDE4">
+<meta name="description" content="Bandung, Before Ten — a little afternoon escape, before the city goes quiet.">
+
+<!-- EDIT: page title -->
+<title>Bandung, Before Ten</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<!-- Leaflet (no API key needed) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Scroll progress indicator -->
+<div class="progress" role="presentation"><span class="progress__bar" id="progressBar"></span></div>
+
+<!-- Soft cursor light (desktop only, injected/controlled by JS) -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<a class="skip-link" href="#invitation">Skip to the invitation</a>
+
+<main>
+
+  <!-- ============================================================
+       SECTION 01 — HERO
+       EDIT: title, tagline, guest name
+  ============================================================ -->
+  <header class="hero" id="hero">
+    <div class="hero__glow" id="heroGlow" aria-hidden="true"></div>
+    <div class="hero__grain" aria-hidden="true"></div>
+
+    <div class="shell hero__inner">
+      <p class="eyebrow hero__eyebrow">Personal event proposal &middot; Bandung</p>
+
+      <h1 class="hero__title">
+        <span class="line"><span>Bandung,</span></span>
+        <span class="line"><span><em>Before</em> Ten</span></span>
+      </h1>
+
+      <!-- EDIT: tagline -->
+      <p class="hero__tagline">A little afternoon escape, before the city goes quiet.</p>
+
+      <div class="hero__for">
+        <span class="eyebrow">Prepared especially for</span>
+        <!-- EDIT: guest name -->
+        <p class="hero__name">Joyyy</p>
+      </div>
+
+      <a class="btn btn--primary hero__cta" href="#invitation" data-scroll>
+        Open the plan <span class="btn__arrow" aria-hidden="true">↓</span>
+      </a>
+    </div>
+
+    <p class="hero__hint" aria-hidden="true">scroll</p>
+  </header>
+
+
+  <!-- ============================================================
+       SECTION 02 — THE INVITATION
+  ============================================================ -->
+  <section class="sec sec--invitation" id="invitation" aria-labelledby="invitation-h">
+    <div class="shell shell--narrow">
+      <p class="eyebrow reveal">01 &mdash; The invitation</p>
+      <h2 class="h-serif" id="invitation-h">Dear Joyyy,</h2>
+
+      <div class="prose reveal">
+        <p>Apparently, someone thought it would be a good idea to spend an afternoon wandering around Bandung until 10.</p>
+        <p>That someone has since written it down, given it a start time, and made it look official. So here we are.</p>
+        <p class="prose__lead">No complicated agenda. Just food, coffee, conversations, a bit of Bandung at night &mdash; and one very specific deadline: <em>home by ten</em>.</p>
+        <p class="prose__note">Everything after this page is a suggestion. The only fixed part is the ending.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 03 — THE PLAN (timeline)
+       EDIT: times & milestone labels
+  ============================================================ -->
+  <section class="sec sec--plan" id="plan" aria-labelledby="plan-h">
+    <div class="shell">
+      <p class="eyebrow reveal">02 &mdash; Overview</p>
+      <h2 class="h-serif" id="plan-h">The Plan</h2>
+
+      <ol class="timeline" id="timeline">
+        <li class="tl reveal"><span class="tl__dot" aria-hidden="true"></span><time class="tl__time">15:45</time><span class="tl__label">Pick Up</span></li>
+        <li class="tl reveal"><span class="tl__dot" aria-hidden="true"></span><time class="tl__time">16:00</time><span class="tl__label">Warm Up</span></li>
+        <li class="tl reveal"><span class="tl__dot" aria-hidden="true"></span><time class="tl__time">16:45</time><span class="tl__label">Dinner</span></li>
+        <li class="tl reveal"><span class="tl__dot" aria-hidden="true"></span><time class="tl__time">17:45</time><span class="tl__label">Leisure</span></li>
+        <li class="tl reveal"><span class="tl__dot" aria-hidden="true"></span><time class="tl__time">21:00</time><span class="tl__label">Night Ride</span></li>
+        <li class="tl reveal tl--end"><span class="tl__dot" aria-hidden="true"></span><time class="tl__time">22:00</time><span class="tl__label">Drop Off</span></li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 04 — FULL RUNDOWN
+       EDIT: every <article class="card"> below is one agenda item
+  ============================================================ -->
+  <section class="sec sec--rundown" id="rundown" aria-labelledby="rundown-h">
+    <div class="shell">
+      <p class="eyebrow reveal">03 &mdash; Rundown</p>
+      <h2 class="h-serif" id="rundown-h">An Afternoon,<br>Properly Scheduled.</h2>
+      <p class="sec__sub reveal">Tap a card for the details.</p>
+
+      <div class="cards">
+
+        <article class="card reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">15.45&ndash;16.00</time>
+            <h3 class="card__title">OTW Jemput</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Ketemu Joyyy dan warm up sebentar.</p>
+          </div></div>
+        </article>
+
+        <article class="card reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">16.00&ndash;16.15</time>
+            <h3 class="card__title">Warm Up Session</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Ngobrol ringan sebelum berangkat.</p>
+          </div></div>
+        </article>
+
+        <article class="card reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">16.15&ndash;16.45</time>
+            <h3 class="card__title">Transit I</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Rumah &rarr; W.Co</p>
+          </div></div>
+        </article>
+
+        <article class="card reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">16.45&ndash;17.30</time>
+            <h3 class="card__title">Dinner Session</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Makan + casual conversation.</p>
+          </div></div>
+        </article>
+
+        <article class="card reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">17.30&ndash;17.45</time>
+            <h3 class="card__title">Transit II</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>W.Co &rarr; Saraga</p>
+          </div></div>
+        </article>
+
+        <article class="card card--wide reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">17.45&ndash;20.45</time>
+            <h3 class="card__title">Saraga Leisure Session</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Coffee, hangout, conversation, leisure.</p>
+            <p class="card__note">Agenda ini fleksibel dan tidak perlu dianggap sebagai tiga jam duduk diam di satu kursi.</p>
+          </div></div>
+        </article>
+
+        <article class="card reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">20.45&ndash;21.00</time>
+            <h3 class="card__title">Departure Preparation</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Persiapan meninggalkan Saraga.</p>
+          </div></div>
+        </article>
+
+        <article class="card reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">21.00&ndash;22.00</time>
+            <h3 class="card__title">Bandung Night Ride</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Keliling Bandung secara santai sambil perjalanan pulang.</p>
+          </div></div>
+        </article>
+
+        <article class="card card--final reveal">
+          <button class="card__head" type="button" aria-expanded="false">
+            <time class="card__time">22.00</time>
+            <h3 class="card__title">Drop Off</h3>
+            <span class="card__plus" aria-hidden="true"></span>
+          </button>
+          <div class="card__detail"><div class="card__detail-inner">
+            <p>Target sampai rumah Joyyy.</p>
+          </div></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 04b — THE ROUTE (Leaflet map)
+       All coordinates live in script.js → EDIT YOUR EVENT LOCATIONS HERE
+  ============================================================ -->
+  <section class="sec sec--route" id="route" aria-labelledby="route-h">
+    <div class="shell">
+      <p class="eyebrow reveal">04 &mdash; The route</p>
+      <h2 class="h-serif" id="route-h">The Route</h2>
+      <p class="sec__sub reveal">Solid line is the plan. Dashed line is the part we improvise.</p>
+
+      <div class="map-wrap reveal">
+        <div class="map" id="map" role="application" aria-label="Interactive map of the evening route"></div>
+
+        <!-- Tap-to-activate shield: keeps page scrolling smooth on mobile -->
+        <div class="map-shield" id="mapShield">
+          <span class="map-shield__pill">Tap to explore the map</span>
+        </div>
+      </div>
+
+      <div class="map-actions">
+        <button class="btn btn--ghost" type="button" id="btnViewRoute">View Route</button>
+        <button class="btn btn--ghost" type="button" id="btnCenterMap">Center Map</button>
+        <button class="btn btn--ghost btn--lock" type="button" id="btnLockMap" hidden>Lock map</button>
+      </div>
+
+      <ul class="legend" aria-label="Map legend">
+        <li><span class="legend__key legend__key--pickup" aria-hidden="true"></span>Pick up</li>
+        <li><span class="legend__key legend__key--food" aria-hidden="true"></span>Dinner</li>
+        <li><span class="legend__key legend__key--coffee" aria-hidden="true"></span>Leisure</li>
+        <li><span class="legend__key legend__key--night" aria-hidden="true"></span>Night ride</li>
+        <li><span class="legend__key legend__key--home" aria-hidden="true"></span>Home</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 05 — THE RULES
+  ============================================================ -->
+  <section class="sec sec--rules" id="rules" aria-labelledby="rules-h">
+    <div class="shell">
+      <p class="eyebrow reveal">05 &mdash; Ground rules</p>
+      <h2 class="h-serif" id="rules-h">Very Serious Rules.</h2>
+
+      <ol class="rules">
+        <li class="rule reveal"><span class="rule__no">01.</span><p>No rushing.</p></li>
+        <li class="rule reveal"><span class="rule__no">02.</span><p>If the conversation gets good, the schedule is allowed to lose.</p></li>
+        <li class="rule reveal"><span class="rule__no">03.</span><p>If hungry &rarr; eat.</p></li>
+        <li class="rule reveal"><span class="rule__no">04.</span><p>If thirsty &rarr; coffee.</p></li>
+        <li class="rule reveal"><span class="rule__no">05.</span><p>If tired &rarr; rest.</p></li>
+        <li class="rule reveal"><span class="rule__no">06.</span><p>If Bandung looks good at night &rarr; keep riding.</p></li>
+        <li class="rule reveal rule--hard"><span class="rule__no">07.</span><p>21:00 means departure.</p></li>
+        <li class="rule reveal rule--hard"><span class="rule__no">08.</span><p>22:00 means home.</p></li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 06 — CONTINGENCY PLAN
+  ============================================================ -->
+  <section class="sec sec--contingency" id="contingency" aria-labelledby="cont-h">
+    <div class="shell">
+      <p class="eyebrow reveal">06 &mdash; Contingency</p>
+      <h2 class="h-serif" id="cont-h">In Case Reality Happens</h2>
+
+      <div class="flips">
+        <button class="flip reveal" type="button" aria-expanded="false">
+          <span class="flip__key">Rain</span>
+          <span class="flip__val">Coffee gets longer. Night ride gets shorter.</span>
+        </button>
+        <button class="flip reveal" type="button" aria-expanded="false">
+          <span class="flip__key">Traffic</span>
+          <span class="flip__val">Route adjusted. Deadline remains.</span>
+        </button>
+        <button class="flip reveal" type="button" aria-expanded="false">
+          <span class="flip__key">Late start</span>
+          <span class="flip__val">Some unnecessary agenda will be sacrificed.</span>
+        </button>
+        <button class="flip reveal" type="button" aria-expanded="false">
+          <span class="flip__key">Tired</span>
+          <span class="flip__val">Sit down. Drink something. No heroics.</span>
+        </button>
+        <button class="flip reveal" type="button" aria-expanded="false">
+          <span class="flip__key">Good conversation</span>
+          <span class="flip__val">Schedule temporarily ignored.</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 07 — BANDUNG AFTER DARK  (night begins here)
+       EDIT: area names below
+  ============================================================ -->
+  <section class="sec sec--night sec--dark" id="afterdark" aria-labelledby="dark-h">
+    <div class="skyline" aria-hidden="true"></div>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+
+    <div class="shell">
+      <p class="eyebrow reveal">07 &mdash; After dark</p>
+      <h2 class="h-serif h-serif--big" id="dark-h">21:00 &mdash;<br>Bandung After Dark</h2>
+
+      <p class="depart reveal"><span class="depart__time">21:00</span><span class="depart__label">Departure</span></p>
+
+      <ul class="places">
+        <li class="reveal">Dago</li>
+        <li class="reveal">Riau</li>
+        <li class="reveal">Braga</li>
+        <li class="reveal">Asia Afrika</li>
+        <li class="reveal">&hellip; wherever else looks awake</li>
+      </ul>
+
+      <p class="pull reveal">Not a checklist.<br>Just wherever the night feels worth stopping.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 08 — WHAT TO EXPECT
+  ============================================================ -->
+  <section class="sec sec--expect sec--dark" id="expect" aria-labelledby="expect-h">
+    <div class="shell">
+      <p class="eyebrow reveal">08 &mdash; What to expect</p>
+      <h2 class="h-serif" id="expect-h">What To Expect</h2>
+
+      <ul class="grid-expect">
+        <li class="ex reveal"><span class="ex__ico ex__ico--food" aria-hidden="true"></span><span class="ex__t">Good food</span></li>
+        <li class="ex reveal"><span class="ex__ico ex__ico--coffee" aria-hidden="true"></span><span class="ex__t">Coffee</span></li>
+        <li class="ex reveal"><span class="ex__ico ex__ico--talk" aria-hidden="true"></span><span class="ex__t">Random conversations</span></li>
+        <li class="ex reveal"><span class="ex__ico ex__ico--night" aria-hidden="true"></span><span class="ex__t">Bandung at night</span></li>
+        <li class="ex reveal"><span class="ex__ico ex__ico--ride" aria-hidden="true"></span><span class="ex__t">A safe ride home</span></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 09 — THE FINE PRINT
+  ============================================================ -->
+  <section class="sec sec--fine sec--dark" id="fineprint" aria-labelledby="fine-h">
+    <div class="shell shell--narrow">
+      <p class="eyebrow reveal">09 &mdash; The fine print</p>
+      <h2 class="h-serif" id="fine-h">Terms &amp; Conditions</h2>
+
+      <ul class="fine">
+        <li class="reveal">Attendance is highly appreciated.</li>
+        <li class="reveal">Complaints regarding food quality may be submitted directly to Zidan.</li>
+        <li class="reveal">Complaints regarding weather will not be accepted.</li>
+        <li class="reveal">Schedule may change without prior notice.</li>
+        <li class="reveal">Good conversations may cause delays.</li>
+        <li class="reveal">Returning home safely remains mandatory.</li>
+      </ul>
+
+      <p class="fine__foot reveal">Fine print exists solely because apparently every event needs one.</p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 10 — CLOSING
+       EDIT: day + time in the line below the heading
+  ============================================================ -->
+  <section class="sec sec--closing sec--dark" id="closing" aria-labelledby="closing-h">
+    <div class="shell">
+      <h2 class="closing__h h-serif" id="closing-h">So,<br>are we doing this?</h2>
+
+      <!-- EDIT: date / time -->
+      <p class="closing__sub reveal">Sunday, 16 August &middot; 15:45.<br>I&rsquo;ll pick you up.</p>
+
+      <div class="closing__actions reveal">
+        <button class="btn btn--primary btn--lg" type="button" id="btnIn">I&rsquo;m In</button>
+        <button class="btn btn--quiet" type="button" id="btnMaybe">Maybe&hellip;</button>
+      </div>
+
+      <p class="closing__whisper" id="maybeMsg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ============================================================
+     SECTION 11 — FOOTER
+============================================================ -->
+<footer class="footer sec--dark">
+  <div class="shell">
+    <p class="footer__mark">Bandung, Before Ten</p>
+    <p class="footer__time">15:45 &mdash; 22:00</p>
+    <p class="footer__note">Planned by Zidan.<br>Approved by absolutely no one.</p>
+  </div>
+</footer>
+
+
+<!-- Modal for "I'm In" -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__scrim" data-close></div>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modal-h" tabindex="-1">
+    <p class="eyebrow">Confirmed</p>
+    <h3 class="h-serif" id="modal-h">Excellent decision.</h3>
+    <p class="modal__p">See you at 15:45.</p>
+    <button class="btn btn--primary" type="button" data-close>Close</button>
+  </div>
+</div>
+
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
