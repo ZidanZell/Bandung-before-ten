@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Bandung skyline silhouette">
+  <!-- Far hills (Bandung sits in a basin — these are the ridges) -->
+  <path fill="#1E1915" opacity="0.85" d="M0 176 L70 150 L128 168 L196 132 L262 160 L330 138 L402 164 L470 144 L540 170 L610 146 L684 172 L752 150 L820 174 L892 152 L960 176 L1032 156 L1100 178 L1160 160 L1200 172 L1200 300 L0 300 Z"/>
+  <!-- Near rooftops -->
+  <g fill="#100E0C">
+    <path d="M0 236 L0 300 L1200 300 L1200 240 L1160 240 L1160 214 L1128 214 L1128 240 L1084 240 L1084 222 L1050 222 L1050 246 L1010 246 L1010 208 L986 208 L986 246 L940 246 L940 228 L900 228 L900 250 L858 250 L858 218 L826 218 L826 250 L784 250 L784 234 L742 234 L742 252 L700 252 L700 212 L672 212 L672 252 L628 252 L628 232 L588 232 L588 250 L546 250 L546 220 L512 220 L512 250 L470 250 L470 238 L428 238 L428 254 L386 254 L386 216 L358 216 L358 254 L316 254 L316 234 L276 234 L276 252 L234 252 L234 224 L200 224 L200 252 L158 252 L158 240 L118 240 L118 254 L76 254 L76 228 L42 228 L42 254 L0 254 Z"/>
+    <!-- Two antennae, because every skyline has them -->
+    <rect x="1006" y="184" width="2" height="24"/>
+    <rect x="694" y="190" width="2" height="22"/>
+  </g>
+  <!-- Warm windows -->
+  <g fill="#DFA45B">
+    <rect x="994" y="216" width="3" height="4" opacity="0.7"/>
+    <rect x="1000" y="226" width="3" height="4" opacity="0.45"/>
+    <rect x="866" y="228" width="3" height="4" opacity="0.6"/>
+    <rect x="874" y="238" width="3" height="4" opacity="0.35"/>
+    <rect x="680" y="222" width="3" height="4" opacity="0.65"/>
+    <rect x="688" y="234" width="3" height="4" opacity="0.4"/>
+    <rect x="520" y="230" width="3" height="4" opacity="0.55"/>
+    <rect x="528" y="240" width="3" height="4" opacity="0.3"/>
+    <rect x="366" y="226" width="3" height="4" opacity="0.6"/>
+    <rect x="374" y="238" width="3" height="4" opacity="0.35"/>
+    <rect x="210" y="234" width="3" height="4" opacity="0.5"/>
+    <rect x="50" y="238" width="3" height="4" opacity="0.45"/>
+  </g>
+</svg>
